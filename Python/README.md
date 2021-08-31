@@ -39,7 +39,7 @@ Contiene el material de clases de programación en Python hecho en Google Colab.
 | ------ | ------- | ------ |
 | __UML__ | Lenguaje Unificado de Modelado | [![views](https://img.shields.io/youtube/views/Z0yLerU0g-Q?style=social)](https://www.youtube.com/watch?v=Z0yLerU0g-Q) |
 | __Relaciones básicas__ | Asociación, agregación y composición | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jdarguello/Desarrollo_software/blob/master/Python/Colab/RelacionesClases.ipynb) |
-| __Herencia__ | Superclases y subclases | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jdarguello/Desarrollo_software/blob/master/Python/Colab/CondicionalesPython.ipynb) |
+| __Herencia__ | Superclases y subclases | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jdarguello/Desarrollo_software/blob/master/Python/Colab/HerenciaPython.ipynb) |
 
 </div>
 
