@@ -22,7 +22,7 @@ Crea el proyecto django en una ubicación de interés mediante el comando `djang
 
 Para probar la correcta instalación, ejecuta el servidor local con `python manage.py runserver`.
 
-La correcta instalación te debería mostrar en el navegador (dirección: localhost:8000).
+La correcta instalación se debería mostrar en el navegador (dirección: localhost:8000).
 
 ![imagen](./Images/django_install.PNG)
 
