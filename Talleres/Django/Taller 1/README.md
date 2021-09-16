@@ -128,8 +128,8 @@ REST_FRAMEWORK = {
 ### Serializadores
 
 * `from rest_framework import serializers` importa los serializadores al proyecto.
-* `serializers.Serializer` permite crear un serializador básico.
-* `serializers.ModelSerializer` crea serializadores con base en los modelos del proyecto.
+* `serializers.Serializer` permite crear un serializador básico. Se emplea en relaciones de _herencia_.
+* `serializers.ModelSerializer` crea serializadores con base en los modelos del proyecto. Se emplea en relaciones de _herencia_.
 * `serializers.CharField()` se emplea para atributos de tipo texto a serializar.
 * `serializers.IntegerField()` permite serializar atributos de tipo entero.
 * `serializers.FloatField()` serializa atributos de números decimales.
