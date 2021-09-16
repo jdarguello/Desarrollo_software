@@ -57,7 +57,7 @@ __CRUD:__ cuando hablamos de este concepto, nos referimos a la conexión a base 
 
 ## 4. Serializadores
 
-Elabora los serializadores de los modelos CRUD.
+Elabora los serializadores de los modelos CRUD. Lo primero que debes hacer es crear el archivo `serializers.py` en la ruta de la aplicación (debería quedar Productos/serializers.py); dirección en dónde se almacenarán los serializadores de la aplicación `Productos`.
 
 
 
@@ -89,6 +89,24 @@ INSTALLED_APPS = [
 
 * Desarrollo de pruebas de lógica CRUD y del proyecto django en general: `python manage.py shell`
 
+* Configuración de la librería `rest_framework` en `settings.py`:
+
+```
+INSTALLED_APPS = [
+    ...,
+    'rest_framework',
+    'rest_framework.authtoken'
+]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
+
+```
+
 ### Modelos del proyecto - CRUD
 
 * `models.Model` permite la creación de las tablas SQL a través de clases de Python. Se emplea durante relaciones de herencia.
@@ -106,6 +124,15 @@ INSTALLED_APPS = [
 * `models.ForeignKey(<nomClaseModelo>, on_delete=models.CASCADE)` sirve para crear conexión entre tablas SQL y entre objetos CRUD.
 
 * `models.ManyToManyField(<nomClaseModelo>)` se emplea para registrar conexiones entre múltiples tablas SQL y objetos CRUD de Python.
+
+### Serializadores
+
+* `from rest_framework import serializers` importa los serializadores al proyecto.
+* `serializers.Serializer` permite crear un serializador básico.
+* `serializers.ModelSerializer` crea serializadores con base en los modelos del proyecto.
+* `serializers.CharField()` se emplea para atributos de tipo texto a serializar.
+* `serializers.IntegerField()` permite serializar atributos de tipo entero.
+* `serializers.FloatField()` serializa atributos de números decimales.
 
 ### Resumen CRUD - `shell`
 
