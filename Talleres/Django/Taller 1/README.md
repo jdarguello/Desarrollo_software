@@ -187,6 +187,15 @@ objCRUD = <nomClase>.objects.get(<nomAtributo> = <valor>)
 
 nuevoObj = <nomClase>.objects.create(<nomAtributo1> = <valor>, ...)
 
+#PROBAR SERIALIZADOR
+from <nomApp>.serializers import *
+
+Televisores = TipoElectrodomestico.objects.get(nombre="Televisores")
+
+telSerial = TipoSerial(Televisores)
+
+telSerial.data
+
 ```
 
 ### Errores comunes
