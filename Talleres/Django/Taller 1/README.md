@@ -177,11 +177,11 @@ class TipoSerial(serializers.ModelSerializer):
 from <nomApp>.models import *
 
 #OBTENCIÓN DE DATOS
-todosObjsCRUD = <nomClase>.objects.all()
+todosObjsCRUD = <nomClaseCRUD>.objects.all()
 
-objsCRUD = <nomClase>.objects.filter(<nomAtributo> = <valor>)
+objsCRUD = <nomClaseCRUD>.objects.filter(<nomAtributo> = <valor>)
 
-objCRUD = <nomClase>.objects.get(<nomAtributo> = <valor>)
+objCRUD = <nomClaseCRUD>.objects.get(<nomAtributo> = <valor>)
 
 #CREACIÓN DE DATOS SQL 
 
@@ -190,11 +190,11 @@ nuevoObj = <nomClase>.objects.create(<nomAtributo1> = <valor>, ...)
 #PROBAR SERIALIZADOR
 from <nomApp>.serializers import *
 
-Televisores = TipoElectrodomestico.objects.get(nombre="Televisores")
+objCRUD = <nomClaseCRUD>.objects.get(<nomAtributo> = <valor>)
 
-telSerial = TipoSerial(Televisores)
+objSerial = <nomClaseSerial>(objCRUD)
 
-telSerial.data
+objSerial.data
 
 ```
 
