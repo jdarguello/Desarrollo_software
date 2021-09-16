@@ -62,7 +62,7 @@ Para la administración manual del CRUD, debes registrar los modelos en `admin.p
 
 ![admin](./Images/admin.PNG)
 
-## 4. Serializadores
+## 5. Serializadores
 
 Elabora los serializadores de los modelos CRUD. Lo primero que debes hacer es crear el archivo `serializers.py` en la ruta de la aplicación (debería quedar Productos/serializers.py); dirección en dónde se almacenarán los serializadores de la aplicación `Productos`.
 
@@ -132,9 +132,9 @@ REST_FRAMEWORK = {
 
 * `models.ManyToManyField(<nomClaseModelo>)` se emplea para registrar conexiones entre múltiples tablas SQL y objetos CRUD de Python.
 
-### admin
+### Administración CRUD manual
 
-Para el registro de modelos en la sección de _django-admin_ (localhost:8000/admin), debes hacer lo siguiente:
+Para el registro de modelos en la sección de _django-admin_ (localhost:8000/admin), debes hacer lo siguiente en `admin.py`:
 
 ```
 from django.contrib import admin
@@ -146,6 +146,8 @@ admin.site.register(<nomClaseModelo>)
 
 ```
 
+Para crear usuarios de tipo administrador, debes ejecutar: `python manage.py createsuperuser`
+
 ### Serializadores
 
 * `from rest_framework import serializers` importa los serializadores al proyecto.
@@ -154,6 +156,20 @@ admin.site.register(<nomClaseModelo>)
 * `serializers.CharField()` se emplea para atributos de tipo texto a serializar.
 * `serializers.IntegerField()` permite serializar atributos de tipo entero.
 * `serializers.FloatField()` serializa atributos de números decimales.
+
+Ejemplo _ModelSerializer_:
+
+```
+from rest_framework import serializers
+
+from Productos.models import *
+
+class TipoSerial(serializers.ModelSerializer):
+    class Meta:
+        model = TipoElectrodomestico
+        fields = '__all__'
+        #fields = ["nombre", "foto"]
+```
 
 ### Resumen CRUD - `shell`
 
@@ -171,9 +187,18 @@ objCRUD = <nomClase>.objects.get(<nomAtributo> = <valor>)
 
 nuevoObj = <nomClase>.objects.create(<nomAtributo1> = <valor>, ...)
 
+#PROBAR SERIALIZADOR
+from <nomApp>.serializers import *
+
+Televisores = TipoElectrodomestico.objects.get(nombre="Televisores")
+
+telSerial = TipoSerial(Televisores)
+
+telSerial.data
+
 ```
 
 ### Errores comunes
 
 * `ImportError: No module named PIL`. Solución: instalar la librería mediante `python -m pip install Pillow`.
-
+* `no such table: ...` no hay registro de tabla SQL. Solución: correr las migraciones `python manage.py makemigrations` y `python manage.py migrate`
