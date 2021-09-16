@@ -103,9 +103,9 @@ INSTALLED_APPS = [
 
 * `models.FileField()` se utiliza para guardar cualquier tipo de archivo (video, audio, pdf, word, etc).
 
-* `models.ForeignKey(<nomClaseModelo>, on_delete=models.CASCADE)`  
+* `models.ForeignKey(<nomClaseModelo>, on_delete=models.CASCADE)` sirve para crear conexión entre tablas SQL y entre objetos CRUD.
 
-* `models.ManyToManyField(<nomClaseModelo>)`
+* `models.ManyToManyField(<nomClaseModelo>)` se emplea para registrar conexiones entre múltiples tablas SQL y objetos CRUD de Python.
 
 ### Resumen CRUD - `shell`
 
