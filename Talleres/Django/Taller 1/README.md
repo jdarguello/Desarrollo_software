@@ -134,7 +134,7 @@ REST_FRAMEWORK = {
 
 ### Administración CRUD manual
 
-Para el registro de modelos en la sección de _django-admin_ (localhost:8000/admin), debes hacer lo siguiente:
+Para el registro de modelos en la sección de _django-admin_ (localhost:8000/admin), debes hacer lo siguiente en `admin.py`:
 
 ```
 from django.contrib import admin
