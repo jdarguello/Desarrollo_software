@@ -40,7 +40,11 @@ __Aplicación:__ hacemos referencia de aplicación a una _porción_ del proyecto
 
 Construye los modelos CRUD de los productos. Tienes la libertad de elegir la estructura final. Puedes guiarte del diagrama UML.
 
+<div align="center">
+
 ![CRUD](./Images/UML_CRUD.png)
+
+</div>
 
 Como se aprecia en el esquema, una posible solución sería crear tres clases: `TipoElectrodomestico`, `Producto` y `Comentario`.
 
