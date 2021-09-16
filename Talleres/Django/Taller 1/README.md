@@ -62,7 +62,7 @@ Para la administración manual del CRUD, debes registrar los modelos en `admin.p
 
 ![admin](./Images/admin.PNG)
 
-## 4. Serializadores
+## 5. Serializadores
 
 Elabora los serializadores de los modelos CRUD. Lo primero que debes hacer es crear el archivo `serializers.py` en la ruta de la aplicación (debería quedar Productos/serializers.py); dirección en dónde se almacenarán los serializadores de la aplicación `Productos`.
 
