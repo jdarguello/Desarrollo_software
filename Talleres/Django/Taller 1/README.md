@@ -171,7 +171,7 @@ class TipoSerial(serializers.ModelSerializer):
         #fields = ["nombre", "foto"]
 ```
 
-### Resumen CRUD - `shell`
+### Resumen CRUD y serializadores - `shell`
 
 ```
 from <nomApp>.models import *
