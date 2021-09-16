@@ -157,6 +157,20 @@ Para crear usuarios de tipo administrador, debes ejecutar: `python manage.py cre
 * `serializers.IntegerField()` permite serializar atributos de tipo entero.
 * `serializers.FloatField()` serializa atributos de números decimales.
 
+Ejemplo _ModelSerializer_:
+
+```
+from rest_framework import serializers
+
+from Productos.models import *
+
+class TipoSerial(serializers.ModelSerializer):
+    class Meta:
+        model = TipoElectrodomestico
+        fields = '__all__'
+        #fields = ["nombre", "foto"]
+```
+
 ### Resumen CRUD - `shell`
 
 ```
