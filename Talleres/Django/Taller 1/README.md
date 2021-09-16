@@ -177,11 +177,11 @@ class TipoSerial(serializers.ModelSerializer):
 from <nomApp>.models import *
 
 #OBTENCIÓN DE DATOS
-todosObjsCRUD = <nomClaseCRUD>.objects.all()
+todosObjsCRUD = <nomClaseCRUD>.objects.all()                        #Todos los objetos
 
-objsCRUD = <nomClaseCRUD>.objects.filter(<nomAtributo> = <valor>)
+objsCRUD = <nomClaseCRUD>.objects.filter(<nomAtributo> = <valor>)   #Todos los objetos que cumplan las condiciones
 
-objCRUD = <nomClaseCRUD>.objects.get(<nomAtributo> = <valor>)
+objCRUD = <nomClaseCRUD>.objects.get(<nomAtributo> = <valor>)       #Obtiene el objeto que cumpla la condición (sólo puede ser uno)
 
 #CREACIÓN DE DATOS SQL 
 
