@@ -132,7 +132,7 @@ REST_FRAMEWORK = {
 
 * `models.ManyToManyField(<nomClaseModelo>)` se emplea para registrar conexiones entre múltiples tablas SQL y objetos CRUD de Python.
 
-### admin
+### Administración CRUD manual
 
 Para el registro de modelos en la sección de _django-admin_ (localhost:8000/admin), debes hacer lo siguiente:
 
@@ -145,6 +145,8 @@ admin.site.register(<nomClaseModelo>)
 ...
 
 ```
+
+Para crear usuarios de tipo administrador, debes ejecutar: `python manage.py createsuperuser`
 
 ### Serializadores
 
