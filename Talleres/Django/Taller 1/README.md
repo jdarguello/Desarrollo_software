@@ -201,4 +201,4 @@ telSerial.data
 ### Errores comunes
 
 * `ImportError: No module named PIL`. Solución: instalar la librería mediante `python -m pip install Pillow`.
-
+* `no such table: ...` no hay registro de tabla SQL. Solución: correr las migraciones `python manage.py makemigrations` y `python manage.py migrate`
