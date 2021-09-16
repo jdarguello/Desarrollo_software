@@ -55,6 +55,13 @@ __CRUD:__ cuando hablamos de este concepto, nos referimos a la conexión a base 
 ---
 
 
+## 4. Administración de los modelos CRUD
+
+Para la administración manual del CRUD, debes registrar los modelos en `admin.py`, dentro de la carpeta del proyecto para poder manipular la información desde __localhost:8000/admin__
+
+
+![admin](./Images/admin.PNG)
+
 ## 4. Serializadores
 
 Elabora los serializadores de los modelos CRUD. Lo primero que debes hacer es crear el archivo `serializers.py` en la ruta de la aplicación (debería quedar Productos/serializers.py); dirección en dónde se almacenarán los serializadores de la aplicación `Productos`.
@@ -124,6 +131,20 @@ REST_FRAMEWORK = {
 * `models.ForeignKey(<nomClaseModelo>, on_delete=models.CASCADE)` sirve para crear conexión entre tablas SQL y entre objetos CRUD.
 
 * `models.ManyToManyField(<nomClaseModelo>)` se emplea para registrar conexiones entre múltiples tablas SQL y objetos CRUD de Python.
+
+### admin
+
+Para el registro de modelos en la sección de _django-admin_ (localhost:8000/admin), debes hacer lo siguiente:
+
+```
+from django.contrib import admin
+
+from <nomApp>.models import *
+
+admin.site.register(<nomClaseModelo>)
+...
+
+```
 
 ### Serializadores
 
