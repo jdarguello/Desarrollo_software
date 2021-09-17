@@ -187,6 +187,11 @@ objCRUD = <nomClaseCRUD>.objects.get(<nomAtributo> = <valor>)       #Obtiene el 
 
 nuevoObj = <nomClase>.objects.create(<nomAtributo1> = <valor>, ...)
 
+#CONEXIONES 'ForeignKey'
+
+productosNevera = neveras.producto_set.all()
+
+
 #PROBAR SERIALIZADOR
 from <nomApp>.serializers import *
 
