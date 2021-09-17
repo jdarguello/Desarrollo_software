@@ -164,7 +164,7 @@ from rest_framework.routers import DefaultRouter
 from Productos.views import *
 
 router = DefaultRouter()
-router.register('tipo-electro', TipoAPI)
+router.register('tipo-electro', TipoElectroAPI)
 
 
 urlpatterns = [
