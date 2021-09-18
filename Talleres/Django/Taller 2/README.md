@@ -20,7 +20,7 @@ El tema base de este taller será la lógica básica del __checkout__ de una pla
 
 ## 1. Repositorio oficial
 
-Puedes acceder al repositorio oficial de este taller a través haciendo click [aquí](https://github.com/jdarguello/ExEcommerce). En este repositorio debes hacer lo siguiente:
+Puedes acceder al repositorio oficial de este taller haciendo click [aquí](https://github.com/jdarguello/ExEcommerce). En este repositorio debes hacer lo siguiente:
 
 1. Crea un _issue_ personal tuyo en el proyecto. Debes titularlo: __"Checkout #cedula"__; por ejemplo: "Checkout 109846463".
 
@@ -30,7 +30,7 @@ Puedes acceder al repositorio oficial de este taller a través haciendo click [a
 
 </div>
 
-__No olvides escribir el número del _issue_ que acabas de crear__.
+__No olvides escribir el número del _issue_ que acabas de crear para recordarlo, lo necesitarás más adelante__.
 
 2. Crea una copia (_fork_) del proyecto en tu cuenta personal.
 
@@ -57,12 +57,13 @@ Ahora, crearás una aplicación del proyecto django bajo el nombre __"checkout-#
 
 ## 4. Modelos CRUD
 
-Construye los modelos CRUD para el checkout de la plataforma. Puedes guiarte del diagrama UML.
+Construye los modelos CRUD para el checkout de la plataforma. Puedes guiarte del diagrama UML. Recuerda que los modelos debes crearlos en `models.py`.
 
+![CRUD](./Images/UML_CRUD.png)
 
 ## 5. Serializadores
 
-Construye los serializadores del proyecto.
+Construye los serializadores del proyecto. 
 
 ## 6. API's
 
