@@ -31,8 +31,13 @@ class Producto(models.Model):
     def __str__(self):
         return self.nombre
     
+    @property
     def calcularCalificacion(self):
-        pass
+        comentarios = self.comentario_set.all()
+        calificacion = 0
+        for comentario in comentarios:
+            calificacion += comentario.calificacion
+        return calificacion/len(comentarios)
 
 class Comentario(models.Model):
     usuario = models.CharField(max_length=100)
