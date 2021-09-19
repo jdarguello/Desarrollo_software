@@ -67,9 +67,70 @@ Construye los serializadores del proyecto.
 
 ## 6. API's
 
-Crea las API's con base en la información que deseas que tus usuarios observen en el frontend.
+Crea las API's con base en la información que deseas que tus usuarios observen en el frontend. Para el carrito de compras, ten en cuenta lo siguiente: en el momento en que se crea el `CarritoCompras`, no tenemos certeza de que el usuario ya lo haya pagado; por lo que es necesario actualizar el atributo `pagado` una vez haya pagado a través de la pasarela de pagos. Como es necesario actualizar información, no es recomendable utilizar `viewsets.ModelViewSet`, sino `viewsets.ViewSet`.
 
-## 7. Actualizar proyecto
+```
+from rest_framework import viewsets
+from rest_framework.response import Response
+from rest_framework.status import HTTP_400_BAD_REQUEST
+
+from Checkout.serializers import *
+
+class CarritoComprasAPI(viewsets.ViewSet):
+    def list(self, request):
+        carritos = CarritoCompras.objects.all()
+        serializer = CarritoComprasSerial(carritos, many=True)
+        return Response(serializer.data)
+    
+    def create(self, request):
+        serializer = CarritoComprasSerial(data=request.data)
+        if serializer.is_valid():
+            carrito = serializer.save()
+            return Response({'idCarrito':carrito.id})
+        return Response(serializer.errors, HTTP_400_BAD_REQUEST)
+    
+    def partial_update(self, request, pk=None):
+        carrito = self.get_object()
+        data = {'pagado':True}
+        serializer = CarritoComprasSerial(carrito, data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'update':True})
+        return Response(serializer.errors, HTTP_400_BAD_REQUEST)
+```
+
+
+Pero además, es recomendable tener en cuenta lo siguiente: cuando se crea el `CarritoCompras`, es porque el cliente ya ha elegidos __todos__ los artículos que desea comprar; por lo que si decides emplear `viewsets.ModelViewSet` el registro de cada artículo se hará de forma individual. Es decir, el frontend tendrá que hacer el registro de _un artículo a la vez_. Lo anterior no es práctico, por lo que deberíamos utilizar `viewset.ViewSet` para el registro de todos los artículos. Lo siguiente solucionaría este inconveniente:
+
+```
+from rest_framework import viewsets
+from rest_framework.response import Response
+from rest_framework.status import HTTP_400_BAD_REQUEST
+
+from Checkout.serializers import *
+
+class ArticulosAPI(viewsets.ViewSet):
+    def list(self, request):
+        articulos = Articulo.objects.all()
+        serializer = ArticuloSerial(articulos, many=True)
+        return Response(serializer.data)
+    
+    def create(self, request):
+        serializer = ArticuloSerial(data=request.data, many=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'Creados':True})
+        return Response(serializer.errors, HTTP_400_BAD_REQUEST)
+
+```
+
+El siguiente paso consiste en registrar en `urls.py` las direcciones de las API's creadas.
+
+## 7. Pruebas
+
+Siempre es recomendable hacer pruebas de los algoritmos para verificar su funcionalidad. Recuerda que dispones del `shell` y del servidor local para realizar estas pruebas.
+
+## 8. Actualizar proyecto
 
 Una vez hayas terminado, sube el contenido a tu repositorio copia de la siguiente forma:
 
