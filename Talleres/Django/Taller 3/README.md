@@ -130,7 +130,7 @@ class RegisterAPI(views.APIView):
         if usuario.is_valid():
             #¿Información válida?
             usuario.save()
-            return Response({"Bienvenido": False})
+            return Response({"Bienvenido": True})
         return Response(usuario.errors, HTTP_400_BAD_REQUEST)
 ```
 
