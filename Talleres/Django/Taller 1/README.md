@@ -113,7 +113,7 @@ Para cumplir las necesidades de nuestra aplicación, utilizaremos los _ViewSets_
 
 Como ejemplo, se mostrará la forma en cómo se podría crear la API de los objetos `TipoElectrodomestico`. Para ello, utilizaremos una librería derivada de `ViewSet` llamada `ModelViewSet`. Esta librería sólo requiere de dos argumentos para la renderización de la información de la API, que son: la clase de serialización, mediante el atributo `serializer_class`, y la información a renderizar, a través del atributo `queryset`.
 
-```
+```PYTHON
 from rest_framework import viewsets
 
 from Productos.serializers import *
@@ -125,7 +125,7 @@ class TipoElectroAPI(viewsets.ModelViewSet):
 
 La clase `TipoElectroAPI` se trata de una API resumida que permite, desde el frontend, acceder a toda la información registrada en base de datos (serializada mediante la clase `TipoSerial`). Esta API sólo nos permite listar y crear nueva información. Si deseamos tener un _mayor control_ sobre las acciones CRUD desde la API podemos utilizar la clase `ViewSet`, como se muestra a continuación:
 
-```
+```PYTHON
 from rest_framework import viewsets
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
@@ -157,7 +157,7 @@ class TipoElectroAPI(viewsets.ViewSet):
 
 En esta sección, registraremos las rutas en donde se podrá establecer la comunicación entre el backend y el frontend. Al trabajar con `ViewSet`, tendremos que registrar nuestras rutas a través de un `router`, como se muestra a continuación:
 
-```
+```PYTHON
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
@@ -178,7 +178,7 @@ Las rutas incluidas se tratan de rutas __locales__; por lo que es necesario proc
 
 Ahora que ya están listas las direcciones locales, debemos agregarlas a las direcciones del proyecto de la siguiente forma:
 
-```
+```PYTHON
 from django.contrib import admin
 from django.urls import path, include
 
