@@ -64,7 +64,7 @@ class User (serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = '__all__'
-        extra_kwargs = {'password':{'write-only':True}}
+        extra_kwargs = {'password':{'write_only':True}}
 ```
 
 ## 5. Permisos de usuario
