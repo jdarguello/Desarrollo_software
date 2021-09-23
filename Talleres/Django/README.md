@@ -63,7 +63,7 @@ REST_FRAMEWORK = {
 
 Para el registro de modelos en la sección de _django-admin_ (localhost:8000/admin), debes hacer lo siguiente en `admin.py`:
 
-```
+```PYTHON
 from django.contrib import admin
 
 from <nomApp>.models import *
@@ -86,7 +86,7 @@ Para crear usuarios de tipo administrador, debes ejecutar: `python manage.py cre
 
 Ejemplo _ModelSerializer_:
 
-```
+```PYTHON
 from rest_framework import serializers
 
 from Productos.models import *
@@ -100,7 +100,7 @@ class TipoSerial(serializers.ModelSerializer):
 
 Ejemplo _Serializer_:
 
-```
+```PYTHON
 from rest_framework import serializers
 
 from Productos.models import *
@@ -112,7 +112,7 @@ class TipoSerial(serializers.Serializer):
 
 ## Resumen CRUD y serializadores - `shell`
 
-```
+```PYTHON
 from <nomApp>.models import *
 
 #OBTENCIÓN DE DATOS

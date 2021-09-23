@@ -53,7 +53,7 @@ En este punto, ya estás listo para trabajar en el proyecto.
 
 ## 3. Aplicación _checkout_
 
-Ahora, crearás una aplicación del proyecto django bajo el nombre __"checkout-#cedula"__. Es importante que coloques tu número de identificación para que al hacer el _pull request_ no haya conflicto al añadirlo al repositorio oficial. Recuerda también hacer la configuración en `settings.py`.
+Ahora, crearás una aplicación del proyecto django bajo el nombre __"checkout#cedula"__. Es importante que coloques tu número de identificación para que al hacer el _pull request_ no haya conflicto al añadirlo al repositorio oficial. Recuerda también hacer la configuración en `settings.py`.
 
 ## 4. Modelos CRUD
 

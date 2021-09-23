@@ -64,7 +64,8 @@ class User (serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = '__all__'
-        extra_kwargs = {'password':{'write-only':True}}
+        extra_kwargs = {'password':{'write_only':True}, "style":{'input_type': 'password'}}}
+        
 ```
 
 ## 5. Permisos de usuario
@@ -130,7 +131,7 @@ class RegisterAPI(views.APIView):
         if usuario.is_valid():
             #¿Información válida?
             usuario.save()
-            return Response({"Bienvenido": False})
+            return Response({"Bienvenido": True})
         return Response(usuario.errors, HTTP_400_BAD_REQUEST)
 ```
 
