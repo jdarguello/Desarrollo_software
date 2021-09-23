@@ -39,6 +39,31 @@ class ArticulosAPI(viewsets.ViewSet):
             serializer.save()
             return Response({'Creados':True})
         return Response(serializer.errors, HTTP_400_BAD_REQUEST)
+    
+    def partial_update(self, request, pk=None):
+        #Permite actualizar atributos de nuestros objetos CRUD
+        carrito = CarritoCompras.objects.get(pk=pk)
+        carritoS = CarritoSerial(carrito, request.data, partial=True)
+        if carritoS.is_valid():
+            carritoS.save()
+            return Response({"Actualizado":True})
+        return Response(carritoS.errors, status=HTTP_400_BAD_REQUEST)
+    
+    
+    def update(self, request, pk=None):
+        #Permite actualizar TODOS los argumentos en base de datos
+        carrito = CarritoCompras.objects.get(pk=pk)
+        carritoS = CarritoSerial(carrito, request.data)
+        if carritoS.is_valid():
+            carritoS.save()
+            return Response({"Actualizado":True})
+        return Response(carritoS.errors, status=HTTP_400_BAD_REQUEST)
+
+
+    def destroy(self, request, pk=None):
+        carrito = CarritoCompras.objects.get(pk=pk)
+        carrito.delete()
+        return Response({"Delete":True})
 
 class InfoEnvioAPI(viewsets.ViewSet):
     def create(self, request):
