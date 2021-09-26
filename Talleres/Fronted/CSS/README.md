@@ -10,7 +10,7 @@ El lenguaje de estilos _css_ define la estética de los documentos HTML. Normalm
 
 Para el presente taller, construiremos parte del desarrollo visual de la plataforma _TúFlix+_, como se aprecia a continuación:
 
-![tuflix](./TúFlix/Images/ref.PNG)
+![tuflix](./Images/ref.PNG)
 
 ## 2. Generalidades
 
@@ -56,13 +56,13 @@ body {
 
 El resultado obtenido será:
 
-![general](./TúFlix/Images/general.PNG)
+![general](./Images/general.PNG)
 
 ## 3. Cabecera
 
 Empezaremos construyendo la cabecera del frontend, que normalmente es la que se preserva en los demás documentos, conocido también como el menú de navegación.
 
-![cabecer](./TúFlix/Images/Cabecera.PNG)
+![cabecer](./Images/Cabecera.PNG)
 
 Como se aprecia, las dimensiones externas de la cabecera son: 60px en el sentido horizontal y 30px en el sentido vertical; para un diseño 1920x1080 pixeles. Para los textos, importaremos estilos de __Google Fonts__ en la sección `head` de nuestro archivo HTML, de la siguiente forma:
 
@@ -92,7 +92,7 @@ La cabecera se trata del menú de navegación del aplicación web. En cuanto al 
 
 El resultado se puede apreciar a continuación:
 
-![noEstiloC](./TúFlix/Images/cabecera_noestilo.PNG)
+![noEstiloC](./Images/cabecera_noestilo.PNG)
 
 ### 3.2. Opciones de navegación
 
@@ -124,7 +124,7 @@ a:hover {
 ```
 Visualmente, obtenemos el siguiente resultado:
 
-![cabB](./TúFlix/Images/cabeceraBlanca.PNG)
+![cabB](./Images/cabeceraBlanca.PNG)
 
 ### 3.3. Logo
 
@@ -151,14 +151,14 @@ Para el logo, se destaca la siguiente información:
 
 Como resultado, obtendremos nuestro menú de navegación ordeando y acotado, acorde al prototipo.
 
-![cabecera](./TúFlix/Images/CabeceraTuFlix.PNG)
+![cabecera](./Images/CabeceraTuFlix.PNG)
 
 
 ## 4. Película principal
 
 La sección de la película principal consistirá en la sección principal de nuestra aplicación web. 
 
-![cruellaG](./TúFlix/Images/peliPrin.PNG)
+![cruellaG](./Images/peliPrin.PNG)
 
 ### 4.1. HTML
 
@@ -177,7 +177,7 @@ En el archivo HTML, definiremos el contenido en una sección, mostrando el títu
 
 El resultado visible se puede apreciar a continuación:
 
-![sincss](./TúFlix/Images/sincss.PNG)
+![sincss](./Images/sincss.PNG)
 
 ### 4.2. css
 
@@ -203,7 +203,7 @@ section {
 
 Que nos dará como resultado:
 
-![fondo](./TúFlix/Images/fondo.PNG)
+![fondo](./Images/fondo.PNG)
 
 #### 4.2.2 Texto y botones
 
@@ -249,4 +249,4 @@ button:hover {
 
 Que nos dará como resultado el objetivo deseado:
 
-![final](./TúFlix/Images/final.PNG)
+![final](./Images/final.PNG)
