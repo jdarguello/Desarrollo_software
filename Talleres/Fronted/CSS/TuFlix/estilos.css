@@ -1,0 +1,86 @@
+body {
+    background-color: #141414;
+}
+
+nav {
+    padding-top: 30px;
+}
+
+/* Opciones de navegación */
+
+a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    padding-right: 40px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Logo */
+
+.Logo {
+    font-size: 40px;
+    color: #C8BF6C;
+    padding-left: 60px;
+    padding-top: 100px;
+    padding-right: 580px;
+}
+
+.Logo:hover {
+    text-decoration: none;   
+}
+
+/* Película principal */
+
+section {
+    padding-left: 60px;
+}
+
+.peliP {
+    background-image: url(./Images/curella.jpg);
+    background-repeat: no-repeat;
+    background-size: 1400px;
+    padding-bottom: 80px;
+    
+}
+
+
+h1 {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+}
+
+.tituloP {
+    padding-top: 150px;
+}
+
+p {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contenido {
+    font-size: 15px;
+    width: 700px;
+}
+
+button {
+    background-color: #141414;
+    opacity: 0.7;
+    border-radius: 5px;
+    border-width: 0;
+    padding-left: 30px;
+}
+
+button:hover {
+    background-color: rgb(180, 180, 180);
+}
+
+.tBoton {
+    padding-right: 30px;
+}
