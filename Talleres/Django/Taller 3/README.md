@@ -60,7 +60,7 @@ Sin embargo, para la clase `User` debemos tener una consideración adicional: po
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 
-class User (serializers.ModelSerializer):
+class UserSerial (serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = '__all__'
