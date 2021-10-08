@@ -1,0 +1,32 @@
+<html ng-app="Checkout">
+    <head>
+        <title>Taller AngularJS</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script src="App.js"></script>
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+    <body ng-controller="control as data">
+        <h2 align="center">Productos</h2>
+        <ul>
+            <li ng-repeat="prod in data.productos">{{prod.nombre}} - ${{prod.precio}}</li>
+        </ul>
+
+        <h2>Lista de compras</h2>
+        <p>¿Qué deseas comprar?</p>
+        <form ng-submit="data.addProd()">
+            <select ng-model="data.art">
+                <option ng-repeat="prod in data.productos" value="{{prod.nombre}}">{{prod.nombre}}</option>
+            </select>
+            <input type="number" ng-model="data.cant" placeholder="0">
+            <input class="btn-primary" type="submit" value="Añadir">
+        </form>
+        <h3>Resumen de compra</h3>
+        <ul>
+            <li ng-repeat="prod in data.listaCompras">
+                <p>{{prod[0]}} - {{prod[1]}} - ${{prod[3]}}</p>
+            </li>
+        </ul>
+        <p>Total = ${{data.total}}</p>
+    </body>
+    
+</html>
